@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelEase - Your Journey Begins Here</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Header */
+        header {
+            background: #0066cc;
+            color: white;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+        
+        nav a:hover {
+            opacity: 0.8;
+        }
+        
+        /* Hero */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://picsum.photos/seed/travel/1200/600') center/cover;
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 1rem;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+        
+        .btn {
+            background: #ff6600;
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        
+        .btn:hover {
+            background: #e55500;
+        }
+        
+        /* Destinations */
+        .destinations {
+            padding: 4rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .dest-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .dest-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .dest-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .dest-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .dest-content {
+            padding: 1.5rem;
+        }
+        
+        .dest-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .dest-price {
+            color: #ff6600;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        /* Services */
+        .services {
+            background: #f5f5f5;
+            padding: 4rem 1rem;
+        }
+        
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            padding: 3rem 1rem 1rem;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #ff6600;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            line-height: 2;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            padding-top: 2rem;
+            border-top: 1px solid #555;
+            color: #aaa;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">TravelEase</div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Destinations</a></li>
+                    <li><a href="#">Tours</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Discover Next Adventure</h1>
+        <p>Explore breathtaking destinations around the world with our expert travel guides</p>
+        <a href="#" class="btn">Explore Tours</a>
+    </section>
+
+    <!-- Destinations Section -->
+    <section class="destinations">
+        <h2 class="section-title">Popular Destinations</h2>
+        <div class="dest-grid">
+            <div class="dest-card">
+                <img src="https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Paris" class="dest-img">
+                <div class="dest-content">
+                    <h3 class="dest-title">Paris, France</h3>
+                    <p>City of lights and romance</p>
+                    <div class="dest-price">From ₹78,906 </div>
+                </div>
+            </div>
+            <div class="dest-card">
+                <img src="https://picsum.photos/seed/bali/400/300.jpg" alt="Bali" class="dest-img">
+                <div class="dest-content">
+                    <h3 class="dest-title">Bali, Indonesia</h3>
+                    <p>Tropical paradise experience</p>
+                    <div class="dest-price">From ₹70,119</div>
+                </div>
+            </div>
+            <div class="dest-card">
+                <img src="https://picsum.photos/seed/tokyo/400/300.jpg" alt="Tokyo" class="dest-img">
+                <div class="dest-content">
+                    <h3 class="dest-title">Tokyo, Japan</h3>
+                    <p>Modern meets traditional</p>
+                    <div class="dest-price">From ₹1,13,999</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="services-container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service">
+                    <div class="service-icon">✈️</div>
+                    <h3>Flight Booking</h3>
+                    <p>Best deals on flights worldwide</p>
+                </div>
+                <div class="service">
+                    <div class="service-icon">🏨</div>
+                    <h3>Hotel Reservations</h3>
+                    <p>Comfortable stays at great prices</p>
+                </div>
+                <div class="service">
+                    <div class="service-icon">🚗</div>
+                    <h3>Car Rentals</h3>
+                    <p>Explore at your own pace</p>
+                </div>
+                <div class="service">
+                    <div class="service-icon">🎯</div>
+                    <h3>Tour Packages</h3>
+                    <p>All-inclusive travel experiences</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>TravelEase</h3>
+                <p>Your trusted travel partner for unforgettable journeys</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Destinations</a></li>
+                    <li><a href="#">Special Offers</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul class="footer-links">
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Booking Terms</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Customer Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2024 TravelEase. All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>
